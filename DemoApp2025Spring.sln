@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApp2025Spring.App", "DemoApp2025Spring.App\DemoApp2025Spring.App.csproj", "{69B63919-77FF-4DB9-8ED0-D53D2ACC9899}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69B63919-77FF-4DB9-8ED0-D53D2ACC9899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69B63919-77FF-4DB9-8ED0-D53D2ACC9899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69B63919-77FF-4DB9-8ED0-D53D2ACC9899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69B63919-77FF-4DB9-8ED0-D53D2ACC9899}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

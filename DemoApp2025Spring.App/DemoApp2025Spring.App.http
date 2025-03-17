@@ -1,0 +1,6 @@
+@DemoApp2025Spring.App_HostAddress = http://localhost:5163
+
+GET {{DemoApp2025Spring.App_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
