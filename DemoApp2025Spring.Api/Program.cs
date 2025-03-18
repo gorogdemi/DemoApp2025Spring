@@ -22,3 +22,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+// TODO: Overview
+// TODO: Swagger
+// TODO: DI: Singleton, Scoped, Transient
