@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace DemoApp2025Spring.App.Controllers;
+namespace DemoApp2025Spring.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
