@@ -28,9 +28,5 @@ app.Run();
 
 // TODO: Exercise: counter endpoint
 
-// TODO: IPersonService + Implementation with List
-// TODO: PersonController: CRUD endpoints (commit)
-// TODO: Input validation: Required, MaxLength, Email, Range
-
 // TODO: Add log messages
 // TODO: Serilog: Serilog.AspNetCore 9.0.0 (commit)
