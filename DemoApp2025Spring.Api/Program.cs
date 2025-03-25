@@ -1,5 +1,3 @@
-using DemoApp2025Spring.Api;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,8 +6,6 @@ builder.Services.AddControllers();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddSwaggerGen();
-
-builder.Services.AddScoped<ITestService, TestService>();
 
 var app = builder.Build();
 
@@ -26,8 +22,6 @@ app.MapControllers();
 
 app.Run();
 
-// TODO: Browser explanation
-// TODO: DI: Singleton, Scoped, Transient
 // TODO: Exercise: counter endpoint
 
 // TODO: Cleanup (commit)
