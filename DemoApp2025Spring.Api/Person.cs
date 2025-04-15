@@ -1,10 +1,12 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DemoApp2025Spring.Api;
 
 public class Person
 {
-    [Required]
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public string Id { get; set; }
 
     [Required]
