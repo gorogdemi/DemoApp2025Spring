@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 
 namespace DemoApp2025Spring.Api.Controllers;
@@ -15,9 +16,9 @@ public class PeopleController : ControllerBase
     }
 
     [HttpPost]
-    public IActionResult Add([FromBody] Person person)
+    public async Task<IActionResult> Add([FromBody] Person person)
     {
-        var existingPerson = _demoDataContext.People.Find(person.Id);
+        var existingPerson = await _demoDataContext.People.FindAsync(person.Id);
 
         if (existingPerson is not null)
         {
@@ -25,15 +26,15 @@ public class PeopleController : ControllerBase
         }
 
         _demoDataContext.People.Add(person);
-        _demoDataContext.SaveChanges();
+        await _demoDataContext.SaveChangesAsync();
 
         return Ok();
     }
 
     [HttpDelete("{id}")]
-    public IActionResult Delete(string id)
+    public async Task<IActionResult> Delete(string id)
     {
-        var existingPerson = _demoDataContext.People.Find(id);
+        var existingPerson = await _demoDataContext.People.FindAsync(id);
 
         if (existingPerson is null)
         {
@@ -41,22 +42,22 @@ public class PeopleController : ControllerBase
         }
 
         _demoDataContext.People.Remove(existingPerson);
-        _demoDataContext.SaveChanges();
+        await _demoDataContext.SaveChangesAsync();
 
         return Ok();
     }
 
     [HttpGet]
-    public ActionResult<List<Person>> GetAll()
+    public async Task<ActionResult<List<Person>>> GetAll()
     {
-        var people = _demoDataContext.People.ToList();
+        var people = await _demoDataContext.People.ToListAsync();
         return Ok(people);
     }
 
     [HttpGet("{id}")]
-    public ActionResult<Person> Get(string id)
+    public async Task<ActionResult<Person>> Get(string id)
     {
-        var person = _demoDataContext.People.Find(id);
+        var person = await _demoDataContext.People.FindAsync(id);
 
         if (person is null)
         {
@@ -66,15 +67,28 @@ public class PeopleController : ControllerBase
         return Ok(person);
     }
 
+    [HttpGet("{id}/items")]
+    public async Task<ActionResult<List<Item>>> GetItems(string id)
+    {
+        var person = await _demoDataContext.People.FindAsync(id);
+
+        if (person is null)
+        {
+            return NotFound();
+        }
+
+        return Ok(person.Items);
+    }
+
     [HttpPut("{id}")]
-    public IActionResult Update(string id, [FromBody] Person person)
+    public async Task<IActionResult> Update(string id, [FromBody] Person person)
     {
         if (id != person.Id)
         {
             return BadRequest();
         }
 
-        var oldPerson = _demoDataContext.People.Find(id);
+        var oldPerson = await _demoDataContext.People.FindAsync(id);
 
         if (oldPerson is null)
         {
@@ -86,7 +100,7 @@ public class PeopleController : ControllerBase
         oldPerson.BirthDate = person.BirthDate;
 
         _demoDataContext.People.Update(oldPerson);
-        _demoDataContext.SaveChanges();
+        await _demoDataContext.SaveChangesAsync();
 
         return Ok();
     }

@@ -17,7 +17,9 @@ public class Person
     [EmailAddress]
     public string Email { get; set; }
 
-    [Required]
     [Range(typeof(DateOnly), "1990-01-01", "2000-12-31")]
     public DateOnly? BirthDate { get; set; }
+
+    public virtual ICollection<Item> Items { get; set; }
+
 }

@@ -10,5 +10,6 @@ namespace DemoApp2025Spring.Api
         }
 
         public virtual DbSet<Person> People { get; set; }
+        public virtual DbSet<Item> Items { get; set; }
     }
 }
