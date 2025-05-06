@@ -16,5 +16,9 @@
         <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="7.3.1" />
     </ItemGroup>
+    
+    <ItemGroup>
+        <ProjectReference Include="../DemoApp2025Spring.Shared/DemoApp2025Spring.Shared.csproj" />
+    </ItemGroup>
 
 </Project>
