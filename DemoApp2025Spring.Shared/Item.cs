@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DemoApp2025Spring.Api
+namespace DemoApp2025Spring.Shared
 {
     public class Item
     {

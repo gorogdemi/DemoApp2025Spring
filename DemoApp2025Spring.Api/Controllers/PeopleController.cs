@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
+using DemoApp2025Spring.Shared;
 
 namespace DemoApp2025Spring.Api.Controllers;
 

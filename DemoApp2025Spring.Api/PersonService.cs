@@ -1,3 +1,5 @@
+using DemoApp2025Spring.Shared;
+
 namespace DemoApp2025Spring.Api;
 
 public class PersonService : IPersonService

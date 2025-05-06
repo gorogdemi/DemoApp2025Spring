@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DemoApp2025Spring.Shared;
+using Microsoft.EntityFrameworkCore;
 
 namespace DemoApp2025Spring.Api
 {
